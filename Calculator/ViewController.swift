@@ -33,41 +33,41 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func numberPressed(btn: UIButton!) {
+    @IBAction func numberPressed(_ btn: UIButton!) {
         runningNumber += "\(btn.tag)"
         outputLbl.text = runningNumber
         
     }
 
 
-    @IBAction func onDividePressed(sender: AnyObject) {
+    @IBAction func onDividePressed(_ sender: AnyObject) {
         processOperation(Operation.Divide)
     }
     
-    @IBAction func onMultiplyPressed(sender: AnyObject) {
+    @IBAction func onMultiplyPressed(_ sender: AnyObject) {
         processOperation(Operation.Multiply)
     }
     
-    @IBAction func onSubtractPressed(sender: AnyObject) {
+    @IBAction func onSubtractPressed(_ sender: AnyObject) {
         processOperation(Operation.Subtract)
     }
     
-    @IBAction func onAdditionPressed(sender: AnyObject) {
+    @IBAction func onAdditionPressed(_ sender: AnyObject) {
         processOperation(Operation.Addition)
     }
     
-    @IBAction func onEqualPressed(sender: AnyObject) {
+    @IBAction func onEqualPressed(_ sender: AnyObject) {
         processOperation(currentOperation)
     }
     
-    @IBAction func onClearPressed(sender: AnyObject) {
+    @IBAction func onClearPressed(_ sender: AnyObject) {
         leftValStr = ""
         rightValStr = ""
         result = ""
         currentOperation = Operation.Empty
         outputLbl.text = "0"
     }
-    func processOperation(op: Operation) {
+    func processOperation(_ op: Operation) {
         if currentOperation != Operation.Empty {
             
             //if leftValStr == 123456789 && currentOperation == Operation.Equal
